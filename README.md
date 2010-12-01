@@ -1,0 +1,1 @@
+Originally taken from http://www.learningclojure.com/2010/09/clojure-13-first-impression.html
