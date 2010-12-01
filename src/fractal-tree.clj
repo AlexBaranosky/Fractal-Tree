@@ -12,15 +12,15 @@
       (draw-tree g (new-rand-angle +) new-x new-y (new-rand-length) branch-angle (- depth 1))
       (draw-tree g (new-rand-angle -) new-x new-y (new-rand-length) branch-angle (- depth 1)))))
 
-(defn- render [g w h]
+(defn- render [g width height]
   (doto g
     (.setColor Color/BLACK)
-    (.fillRect 0 0 w h)
+    (.fillRect 0 0 width height)
     (.setColor Color/GREEN))
-  (let [init-length (/ (min w h) 5),
-        branch-angle (* 10 (/ w h)),
+  (let [init-length (/ (min width height) 5),
+        branch-angle (* 10 (/ width height)),
         max-depth 12]
-    (draw-tree g 0.0 (/ w 2) h init-length branch-angle max-depth)))
+    (draw-tree g 0.0 (/ width 2) height init-length branch-angle max-depth)))
 
 (defn- create-panel []
   "Create a panel with a customised render"
